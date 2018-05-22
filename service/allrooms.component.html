@@ -1,0 +1,35 @@
+<div class="col-lg-12">
+  <h2>Sobe</h2>
+  <table class="table-stripped table">
+    <thead>
+    <tr>
+    <th>Ime sobe</th>
+    <th>Broj kreveta</th>
+    <th>Broj kvadrata</th>
+    <th>Sprat</th>
+    <th>Cena</th>
+    <th>Delete</th>
+    <th>View</th>
+    <th>Update</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of data">
+        <td>{{room.roomname}}</td>
+        <td>{{room.broj_kreveta}}</td>
+        <td>{{room.broj_kvadrata}}</td>
+        <td>{{room.sprat}}</td>
+        <td>{{room.cena}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeRoom($event,room.id)">Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-default"(click)="viewRoom(room.id)">View</button>
+        </td>
+        <td>
+          <button class="btn btn-default" (click)="updateRoom(room.id)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
